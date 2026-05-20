@@ -8,7 +8,10 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  credentials: false,
+}));
 app.use(express.json());
 app.use('/images', express.static('public/images')); // ← ADD THIS
 
